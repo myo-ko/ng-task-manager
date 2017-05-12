@@ -1,0 +1,15 @@
+.milestones {
+     border: 1px solid #337AB7;
+     padding: 15px;
+     border-radius: 5px;
+     min-height: 100px;
+     background-color: #FFF;
+}
+
+.page-header {
+     margin: 10px;
+}
+
+h3 {
+     font-size: 18px;
+}
