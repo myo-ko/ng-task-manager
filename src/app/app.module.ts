@@ -3,30 +3,29 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { MaterialLoaderModule } from './material-loader/material-loader.module';
 import { MomentModule } from 'angular2-moment';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
-import { ProjectListComponent } from './projects/project-list/project-list.component';
-import { ProjectComponent } from './projects/project/project.component';
-import { MilestoneListComponent } from './milestones/milestone-list/milestone-list.component';
+import { NotFoundComponent } from './not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ProjectModule } from './projects/project.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavComponent,
-    ProjectListComponent,
-    ProjectComponent,
-    MilestoneListComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule,
-    MaterialLoaderModule,
-    MomentModule
+    BrowserAnimationsModule,    
+    MomentModule,
+    ProjectModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

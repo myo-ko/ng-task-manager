@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { MilestoneService } from '../milestone.service';
+import { Milestone } from '../milestone';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-milestone-list',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MilestoneListComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  milestones: Milestone[];
+
+  constructor(
+    private milestoneService: MilestoneService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+
+    this.activatedRoute.params
+      .subscribe(paras => {
+
+        this.id = +paras['id'];
+        this.milestoneService.getMilestonesByProject(this.id)
+        .then(x => this.milestones == x);
+
+      });
   }
 
 }
