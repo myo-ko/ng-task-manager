@@ -1,0 +1,53 @@
+<h3 class="page-header">
+  <i class="glyphicon glyphicon-plus text-primary"></i> Add new milestone
+</h3>
+<form class="form-horizontal" (ngSubmit)="submitForm()" #milestoneForm="ngForm">
+  <!--Descriptiion-->
+  <div class="form-group">
+    <label for="msDescription" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-5">
+      <input type="text" id="msDescription" name="msDescription" class="form-control" 
+      [(ngModel)]="model.msDescription" #msDescription="ngModel"
+        required>
+    </div>
+    <div class="col-sm-5" [hidden]="msDescription.untouched || msDescription.valid">
+      <p class="text-danger">Description is required.</p>
+    </div>
+  </div>
+
+  <!--Start Date-->
+  <div class="form-group">
+    <label for="startDate" class="col-sm-2 control-label">Start Date</label>
+    <div class="col-sm-5">
+      <input type="text" id="startDate" name="startDate" class="form-control" 
+        [ngModel]="model.startDate | date: 'y-MM-dd'"
+        (ngModelChange)="updateStartDate($event)"
+        required #startDate="ngModel">
+    </div>
+    <div class="col-sm-5" [hidden]="startDate.untouched || startDate.valid">
+      <p class="text-danger">Please enter start date.</p>
+    </div>
+  </div>
+
+  <!--End Date-->
+  <div class="form-group">
+    <label for="dueDate" class="col-sm-2 control-label">Due Date</label>
+    <div class="col-sm-5">
+      <input type="text" id="dueDate" name="dueDate" class="form-control" 
+        [ngModel]="model.dueDate | date:'y-MM-dd'"
+        (ngModelChange)="updateDueDate($event)"
+        required #dueDate="ngModel">
+    </div>
+    <div class="col-sm-5" [hidden]="dueDate.untouched || dueDate.valid">
+      <p class="text-danger">Please enter date due.</p>
+    </div>
+  </div>
+
+  <!--Button-->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" [disabled]="!milestoneForm.form.valid" class="btn btn-default">Add</button>
+      <button type="button" class="btn btn-default">Clear</button>
+    </div>
+  </div>
+</form>

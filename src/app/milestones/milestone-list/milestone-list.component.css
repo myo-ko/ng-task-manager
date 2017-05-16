@@ -13,3 +13,9 @@
 h3 {
      font-size: 18px;
 }
+
+.alert-sm {
+     border-radius: 0;
+     padding: 10px;
+     margin: 10px;
+}

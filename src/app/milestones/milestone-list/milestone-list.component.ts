@@ -12,7 +12,8 @@ import 'rxjs/add/operator/switchMap';
 export class MilestoneListComponent implements OnInit {
 
   id: number;
-  milestones: Milestone[];
+  upcomingMilestones: Milestone[];
+  lateMilestones: Milestone[];
 
   constructor(
     private milestoneService: MilestoneService,
@@ -26,7 +27,11 @@ export class MilestoneListComponent implements OnInit {
 
         this.id = +paras['id'];
         this.milestoneService.getMilestonesByProject(this.id)
-        .then(x => this.milestones == x);
+        .then(ms => 
+        {
+           this.upcomingMilestones = ms.filter(ms => !ms.isLate());
+           this.lateMilestones = ms.filter(ms => ms.isLate())
+        });
 
       });
   }

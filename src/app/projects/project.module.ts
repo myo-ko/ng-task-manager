@@ -5,7 +5,6 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectService } from './project.service';
 import { ProjectRoutingModule } from './project-routing.module';
-import { MilestoneModule } from '../milestones/milestone.module';
 
 
 @NgModule({
@@ -15,7 +14,7 @@ import { MilestoneModule } from '../milestones/milestone.module';
      ],
      imports: [
           CommonModule,
-          MilestoneModule,          
+          // MilestoneModule, //this moudule & routes are lazy loaded, no need to import anymore 
           ProjectRoutingModule,
      ],
      providers: [

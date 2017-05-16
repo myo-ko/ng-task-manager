@@ -11,9 +11,8 @@ const routes: Routes = [
           component: ProjectListComponent,          
           children: [
                {
-                    path: ':id/milestones',                    
-                    // redirectTo: '',
-                    // loadChildren: 'app/milestones/milestone.module#MilestoneModule'
+                    path: ':id/milestones',                                        
+                    //loadChildren: 'app/milestones/milestone.module#MilestoneModule'
                     loadChildren: () => MilestoneModule,                    
                }
           ]          

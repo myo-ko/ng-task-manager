@@ -4,7 +4,8 @@ import { Project } from './project';
 
 let PROJECTS: Project[] = [
      new Project(1, "Sample", new Date("2016-12-12"), new Date("2017-05-15")),
-     new Project(1, "Sample 2", new Date("2016-12-12"), new Date("2017-1-13"))
+     new Project(2, "Sample 2", new Date("2016-12-12"), new Date("2017-1-13")),
+     new Project(3, "Sample 3", new Date("2016-12-12"), new Date("2017-1-13"))
 ];
 
 @Injectable()

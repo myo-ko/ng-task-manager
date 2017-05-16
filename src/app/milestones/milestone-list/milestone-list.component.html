@@ -1,20 +1,27 @@
 <div class="milestones">
 
-  <h4>Project ID: {{id}}</h4>
-
   <h3 class="page-header">
     <i class="glyphicon glyphicon-bell text-danger"></i> Late Milestones
   </h3>
 
-  <ul>
-    <li *ngFor="let milestone of milestones">
-      {{milestone.milestoneId}}
-    </li>
-  </ul>
+  <p *ngIf="lateMilestones == null || lateMilestones.length == 0" class="alert alert-sm alert-info">No late milestone</p>
+
+  <p *ngFor="let milestone of lateMilestones" class="alert alert-sm alert-danger">
+    {{milestone.msDescription}}
+    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+  </p>
 
   <h3 class="page-header">
     <i class="glyphicon glyphicon-tag text-success"></i> Upcoming Milestones
   </h3>
-  
+
+   <p *ngIf="upcomingMilestones == null || upcomingMilestones.length == 0" class="alert alert-sm alert-info">No milestone...</p>
+
+  <p *ngFor="let milestone of upcomingMilestones" class="alert alert-sm alert-success">
+    {{milestone.msDescription}}
+    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+  </p>
+
+  <app-milestone-form></app-milestone-form>
 
 </div>

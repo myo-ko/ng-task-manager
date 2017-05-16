@@ -1,4 +1,5 @@
-<h4 class="list-group-item-heading">{{project.description}}</h4>
+<h4 class="list-group-item-heading">
+  {{project.description}}</h4>
 <div class="row">
   <div class="col-md-12" style="margin-top: 5px; margin-bottom: 5px;">
     <p class="list-group-item-text"><i class="glyphicon glyphicon-calendar"></i> Due: {{ project.endDate | date:'y-MM-dd' }} ({{ project.getDaysRemaining()

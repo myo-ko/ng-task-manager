@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ProjectService } from '../project.service';
 import { Project } from '../project';
@@ -14,7 +15,7 @@ export class ProjectListComponent implements OnInit {
 
   selectedProject: Project;
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private route: Router, private projectService: ProjectService) { }
 
   ngOnInit() {
     this.projectService.getProjects()
@@ -26,6 +27,10 @@ export class ProjectListComponent implements OnInit {
 
   selectProject(project: Project): void {
     this.selectedProject = project;
+  }
+
+  loadMilestone(project: Project) {
+    
   }
 
 }

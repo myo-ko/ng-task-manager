@@ -1,3 +1,16 @@
-.list-group-item.active a {
-     color: #FFF;
+h4:hover {
+     cursor: default;
+     color: #007ACC;     
+}
+
+h4:focus {
+     outline: 0;
+}
+
+.active {
+     background-color: blue;
+}
+
+.active-progress-bar {
+     background-color: #FFF;
 }

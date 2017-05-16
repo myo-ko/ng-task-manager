@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found.component';
 
 const routes: Routes = [ 
-     { path: "", redirectTo: "/projects", pathMatch: "full" },
+     { path: '', redirectTo: "/projects", pathMatch: "full" },
      { path: '**', component: NotFoundComponent }
 ];
 

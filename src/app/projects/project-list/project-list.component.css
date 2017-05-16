@@ -2,3 +2,6 @@
      max-width: 100%;
 }
 
+li.list-group-item:focus {
+     outline: 0;
+}

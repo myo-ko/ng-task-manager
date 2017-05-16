@@ -9,4 +9,8 @@ export class Milestone {
           public projectId: number
      ){}
 
+     isLate(): boolean {          
+          return this.milestoneId % 2 == 0; //even ids are late
+     }
+
 }
