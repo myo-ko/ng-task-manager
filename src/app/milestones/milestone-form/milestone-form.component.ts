@@ -52,6 +52,7 @@ export class MilestoneFormComponent implements OnInit {
       .then(x => {
         this.model = x;
         console.log(x);
+        
       });
 
   }
